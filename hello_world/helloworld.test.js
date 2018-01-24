@@ -7,4 +7,10 @@ describe('Testing console.log with inputs', () => {
     func(str);
     expect(func).toHaveBeenCalledWith(str);
   });
+  it('testing with a number', () => {
+    const num = 32;
+    const func = jest.fn(helloworld);
+    func(num);
+    expect(func).toHaveBeenCalledWith(num);
+  });
 });
