@@ -13,4 +13,10 @@ describe('Testing console.log with inputs', () => {
     func(num);
     expect(func).toHaveBeenCalledWith(num);
   });
+  it('testing with undefined', () => {
+    const num = undefined;
+    const func = jest.fn(helloworld);
+    func(num);
+    expect(func).toHaveBeenCalledWith(num);
+  });
 });
