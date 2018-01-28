@@ -7,4 +7,11 @@ describe('testing the asynchronous nature of readFile', () => {
     const result = NaN;
     expect(oneNum).toBe(result);
   });
+
+  it('testing function return type immediately', () => {
+    const filePath = './numFile.txt';
+    const strType = typeof ioasync(filePath);
+    const resultType = 'string';
+    expect(strType).not.toBe(resultType);
+  });
 });
