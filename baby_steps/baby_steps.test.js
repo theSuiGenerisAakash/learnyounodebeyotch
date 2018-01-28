@@ -36,4 +36,10 @@ describe('testing babysteps.js', () => {
     babysteps('3', 'und3fined');
     expect(console.log).toHaveBeenCalledWith(NaN);
   });
+
+  it('testing with strings', () => {
+    console.log = jest.fn(console.log);
+    babysteps('as', 'und3fined');
+    expect(console.log).toHaveBeenCalledWith(NaN);
+  });
 });
