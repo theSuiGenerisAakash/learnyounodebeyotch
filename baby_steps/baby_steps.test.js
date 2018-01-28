@@ -12,4 +12,10 @@ describe('testing babysteps.js', () => {
     babysteps(NaN, 2);
     expect(console.log).toHaveBeenCalledWith(NaN);
   });
+
+  it('testing with normal integers', () => {
+    console.log = jest.fn(console.log);
+    babysteps(-4, 2);
+    expect(console.log).toHaveBeenCalledWith(-2);
+  });
 });
