@@ -30,4 +30,10 @@ describe('testing babysteps.js', () => {
     babysteps('3', '3');
     expect(console.log).toHaveBeenCalledWith(6);
   });
+
+  it('testing with numbers and strings passed as strings', () => {
+    console.log = jest.fn(console.log);
+    babysteps('3', 'und3fined');
+    expect(console.log).toHaveBeenCalledWith(NaN);
+  });
 });
