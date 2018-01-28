@@ -24,4 +24,10 @@ describe('testing babysteps.js', () => {
     babysteps(3, null);
     expect(console.log).toHaveBeenCalledWith(3);
   });
+
+  it('testing with numbers passed as strings', () => {
+    console.log = jest.fn(console.log);
+    babysteps('3', '3');
+    expect(console.log).toHaveBeenCalledWith(6);
+  });
 });
