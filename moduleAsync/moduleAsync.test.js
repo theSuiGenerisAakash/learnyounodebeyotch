@@ -13,4 +13,8 @@ describe('testing modular async function', () => {
     };
     moduleAsync(folderPath, fileExten, cbk);
   });
+
+  it('testing module.exports for return type', () => {
+    expect(typeof moduleAsync).toBe('function');
+  });
 });
