@@ -2,6 +2,10 @@ const fs = require('fs');
 
 module.exports = (folderPath, fileExt, cbk) => {
   fs.readdir(folderPath, (err, data) => {
+    if (err) {
+      console.log(err);
+      return cbk([]);
+    }
     if (data === undefined) {
       return cbk([]);
     }
