@@ -5,8 +5,16 @@ describe('testing fileExt', () => {
     const folderPath = '../ioasync/';
     const fileExten = 'txt';
     const cbk = (data) => {
-      console.log = jest.fn();
       expect(data).toEqual(['numFile.txt', 'strFile.txt']);
+      done();
+    };
+    fileExt(folderPath, fileExten, cbk);
+  });
+  it('testing a folder with no files', (done) => {
+    const folderPath = './ioasync/';
+    const fileExten = 'js';
+    const cbk = (data) => {
+      expect(data).toEqual([]);
       done();
     };
     fileExt(folderPath, fileExten, cbk);
