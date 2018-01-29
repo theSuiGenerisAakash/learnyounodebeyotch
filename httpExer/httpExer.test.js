@@ -18,3 +18,14 @@ describe('testing with a valid url', () => {
     httpExer(url, cbk);
   });
 });
+
+describe('testing with an invalid url', () => {
+  it('testing http GET with stealmylogindicacom', (done) => {
+    const url = 'http://www.stealmylogindica.com/';
+    const cbk = (data) => {
+      expect(data).toBe('ENOTFOUND');
+      done();
+    };
+    httpExer(url, cbk);
+  });
+});
