@@ -9,4 +9,12 @@ describe('testing with a valid url', () => {
     };
     httpExer(url, cbk);
   });
+  it('testing http GET with google.com', (done) => {
+    const url = 'http://google.com/';
+    const cbk = (data) => {
+      expect(data).toBe(302);
+      done();
+    };
+    httpExer(url, cbk);
+  });
 });
