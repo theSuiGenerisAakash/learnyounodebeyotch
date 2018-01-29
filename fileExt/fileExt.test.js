@@ -19,4 +19,13 @@ describe('testing fileExt', () => {
     };
     fileExt(folderPath, fileExten, cbk);
   });
+  it('testing a folder with files with ext that don"t exist', (done) => {
+    const folderPath = './ioasync/';
+    const fileExten = 'blah';
+    const cbk = (data) => {
+      expect(data).toEqual([]);
+      done();
+    };
+    fileExt(folderPath, fileExten, cbk);
+  });
 });
