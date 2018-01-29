@@ -19,4 +19,13 @@ describe('testing responses', () => {
     };
     httpCollect(`http://localhost:8080/?text=${stringToBeSent}`, cbk);
   });
+  it('testing empty string response from local server', (done) => {
+    const stringToBeSent = '';
+    const stringToBeRecvd = '';
+    const cbk = (data) => {
+      expect(data).toEqual([stringToBeRecvd, stringToBeRecvd.length]);
+      done();
+    };
+    httpCollect(`http://localhost:8080/?text=${stringToBeSent}`, cbk);
+  });
 });
